@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - The main function.
- * @argc: The arguement counter.
- * @argv: The arguement vector.
- * Return: This function returns an interger which is the number
- * of arguement passed to it
+ * main - Print main function.
+ * @argc: Arguement counter.
+ * @argv: Arguement vector.
+ * Return: Final result 0
  */
 
 int main(int argc, char *argv[])
