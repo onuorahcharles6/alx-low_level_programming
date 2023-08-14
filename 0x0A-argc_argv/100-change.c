@@ -1,70 +1,44 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
- * main - Entry point
- * @argc: An argument count
- * @argv: An argument vector
- *Return: Always 0 (SUCCESS)
- */
+ * main - prints the minimum number of coins
+ *        to make change for an amount of money.
+ *
+ * @argc: the number of arguments passed
+ * @argv: array pointer holds the arguments passed
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(int argc, char *argv[])
-{	int cents;
-	int coins;
-
-	if (argc == 1)
-	{
-	printf("Error\n");
-	return (1);
-	}
-	cents = atoi(argv[1]);
-	if (cents < 0)
-	{
-	printf("0\n");
-	return (1);
-	}
-	coins = get_change(cents);
-	printf("%d\n", coins);
-	return (0);
-}
-
-/**
- * change - prints the minimum number of coins
- * to make change for an amount of money.
- * @cents: The amount of money we work with
- *Return: Returns all interger which is the value for the minimum number of
- *coins to make change for a given amount of naira
- */
-
-	int change(int cents)
 {
-	int coins = 0;
+	int cents, coins_number = 0;
 
-	for (; cents >= 25;)
+	if (argc != 2)
 	{
-	cents = cents - 25;
-	coins++;
+		printf("Error\n");
+		return (1);
 	}
-	for (; cents >= 10;)
+	else
 	{
-	cents = cents - 10;
-	coins++;
+		cents = atoi(argv[1]);
+		while (cents > 0)
+		{
+			if (cents >= 25)
+				cents -= 25;
+			else if (cents >= 10)
+				cents -= 10;
+			else if (cents >= 5)
+				cents -= 5;
+			else if (cents >= 2)
+				cents -= 2;
+			else if (cents >= 1)
+				cents -= 1;
+			coins_number += 1;
+		}
 	}
-	for (; cents >= 5;)
-	{
-	cents = cents - 5;
-	coins++;
-	}
-	for (; cents >= 2;)
-	{
-	cents = cents - 2;
-	coins++;
-	}
-	for (; cents >= 1;)
-	{
-	cents = cents - 1;
-	coins++;
-	}
-	return (coins);
+	printf("%d\n", coins_number);
+	return (0);
 }
