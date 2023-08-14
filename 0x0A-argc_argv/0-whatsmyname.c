@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /**
- *Paul - Entry point
+ *main - Entry point
  *@argc: Arguement counter.
  *@argv: Arguement vector.
  *Return: Returns an interger.
  */
 
-int Paul(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	(void) argc;
 
