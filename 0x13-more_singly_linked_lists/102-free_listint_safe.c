@@ -16,7 +16,7 @@ void free_listp2(listp_t **head)
 		while ((tempi = curry) != NULL)
 		{
 			curry = curry->next;
-			free(temp);
+			free(tempi);
 		}
 		*head = NULL;
 	}
